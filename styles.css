@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+/* The vertical line */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #000;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.date {
+    width: 45%;
+    text-align: right;
+    padding-right: 3rem;
+    color: #666;
+}
+
+.content {
+    width: 45%;
+    text-align: left;
+    padding-left: 3rem;
+}
+
+/* The circles on the timeline */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #000;
+    border: 3px solid #000;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.button {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 60px;
+    }
+
+    .timeline-item::after {
+        left: 31px;
+    }
+
+    .date {
+        width: 100%;
+        text-align: left;
+        padding-right: 0;
+        padding-bottom: 0.5rem;
+    }
+
+    .content {
+        width: 100%;
+        text-align: left;
+        padding-left: 0;
+    }
+}
